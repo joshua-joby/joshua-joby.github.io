@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joshua Joby | Information Systems Engineering</title>
+<meta name="description" content="Joshua Joby, Stony Brook Information Systems Engineering student seeking a Software Engineer internship. Python projects, teaching experience, and contact details.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#EEF1EC; --surface:#FFFFFF; --ink:#14262B; --muted:#4D6168; --line:#C9D3CF; --accent:#1F6F6B; --accent-ink:#FFFFFF; --mark:#F0B64A;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0F1B1E; --surface:#16272B; --ink:#E8EFEC; --muted:#9DB1B3; --line:#2B4247; --accent:#6CC5BE; --accent-ink:#0F1B1E; --mark:#F0B64A;}
+}
+:root[data-theme="dark"]{--bg:#0F1B1E; --surface:#16272B; --ink:#E8EFEC; --muted:#9DB1B3; --line:#2B4247; --accent:#6CC5BE; --accent-ink:#0F1B1E; --mark:#F0B64A;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 "Source Serif 4",Georgia,serif}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--mark);outline-offset:3px}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;line-height:1.1;margin:0}
+nav{padding:20px 0;border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;font-family:"Bricolage Grotesque",Arial,sans-serif;font-weight:500}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover{text-decoration:underline;text-decoration-color:var(--mark);text-decoration-thickness:3px;text-underline-offset:6px}
+.hero{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center;padding:72px 0 64px}
+.hero h1{font-size:clamp(3rem,10vw,6.2rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 span{display:block}
+.hero p.lead{font-size:1.3rem;max-width:34ch;margin:24px 0 28px;color:var(--muted)}
+.photo{width:220px;height:220px;border-radius:50%;background:var(--surface);border:3px solid var(--ink);display:grid;place-items:center;font:800 4rem "Bricolage Grotesque",Arial,sans-serif;color:var(--accent);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:12px 22px;border-radius:6px;font:700 1rem "Bricolage Grotesque",Arial,sans-serif;text-decoration:none;margin-right:10px}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-size:2rem;margin-bottom:24px}
+.about p{max-width:62ch;margin:0 0 16px}
+.project{display:grid;grid-template-columns:200px 1fr;gap:12px 32px;padding:28px 0;border-bottom:1px solid var(--line)}
+.project:last-child{border-bottom:0}
+.project h3{font-size:1.35rem}
+.stack{color:var(--muted);font-size:.95rem;margin-top:6px}
+.project ul{margin:0;padding-left:1.1em}
+.project li{margin-bottom:8px;max-width:62ch}
+.project .tagline{margin:0 0 10px;font-weight:600}
+.job{max-width:62ch}
+.job h3{font-size:1.25rem}
+.job .when{color:var(--muted);margin:4px 0 12px}
+.skills{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+.skills li{background:var(--surface);border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:.95rem}
+.contact p{max-width:52ch}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{padding:32px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+[hidden]{display:none!important}
+button.btn{cursor:pointer}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:12px;top:12px;background:var(--mark);color:#14262B;padding:8px 12px;z-index:20}
+.toggle{margin-left:auto;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:2px 14px;font:inherit;cursor:pointer}
+.badge{display:inline-block;background:var(--mark);color:#14262B;font:700 .95rem "Bricolage Grotesque",Arial,sans-serif;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+.facts{list-style:none;margin:0;padding:24px 0 8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.facts li{border-left:4px solid var(--accent);padding-left:14px;font-size:.98rem;line-height:1.4}
+.facts strong{display:block;font:700 1.05rem "Bricolage Grotesque",Arial,sans-serif}
+.expect{padding-left:1.1em;max-width:62ch}
+.expect li{margin-bottom:8px}
+.demo{background:var(--surface);border:2px solid var(--ink);border-radius:10px;padding:24px;margin-bottom:24px}
+.demo h3{font-size:1.4rem;margin-bottom:8px}
+.demo p{max-width:62ch;margin:0 0 16px}
+.row{display:grid;grid-template-columns:130px 1fr auto;gap:12px;align-items:center;margin-bottom:12px}
+.bar{height:16px;background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .3s}
+.mini{font:600 .9rem "Bricolage Grotesque",Arial,sans-serif;border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:6px;padding:4px 10px;cursor:pointer;margin-left:6px}
+.why{margin:0 0 10px;color:var(--muted)}
+@media (max-width:700px){.row{grid-template-columns:1fr}}
+@media (max-width:700px){
+  .hero{grid-template-columns:1fr;padding-top:48px}
+  .photo{width:150px;height:150px;font-size:3rem;order:-1}
+  .project{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<nav aria-label="Main"><div class="wrap">
+  <a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a><button id="theme" class="toggle" type="button" aria-label="Switch between light and dark theme">Theme</button>
+</div></nav>
+
+<header class="wrap hero">
+  <div>
+    <h1><span>Joshua</span><span>Joby</span></h1>
+    <p style="margin:16px 0 20px;font:500 1.05rem 'Bricolage Grotesque',Arial,sans-serif;color:var(--muted)">Information Systems Engineering, Stony Brook University</p>
+    <span class="badge">Open to Software Engineer internships</span>
+    <br>
+    <a class="btn" href="#contact">Get in touch</a><a class="btn alt" href="#projects">See my projects</a>
+  </div>
+    <div class="photo"><img src="data:image/jpeg;base64,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" alt="Joshua Joby in a navy suit and tie, smiling"></div>
+</header>
+
+<main class="wrap">
+<section id="about" class="about">
+  <h2>About me</h2>
+  <p>I'm a senior at Stony Brook University studying Information Systems Engineering, a major that sits between computer science, math, and the business side of technology. I like that mix because the best software solves a real problem for a real person, not just a technical one.</p>
+  <p>My interest in teaching technology started early. In the summer of 2022 I designed and ran coding lessons at a summer camp, which taught me how to explain hard ideas clearly. That habit shows up in my projects: I build tools that give people feedback, track their progress, and get better as they use them.</p>
+  <p>I'm looking for a Software Engineer internship where I can apply my programming skills to real engineering challenges and keep learning from a team. Here is what you can expect from me:</p>
+  <ul class="expect">
+    <li><strong>Clear explanations.</strong> Teaching taught me to explain my work so teammates can follow it.</li>
+    <li><strong>Careful testing.</strong> I add safeguards, like the dry-run mode in my file tool, before trusting my own code.</li>
+    <li><strong>People-first design.</strong> I build tools that respond to the person using them.</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="demo" role="group" aria-labelledby="dtitle">
+    <h3 id="dtitle">Try the idea behind my quiz system</h3>
+    <p>Mark a practice answer right or wrong for a subtopic. The percentages show how likely each subtopic is to come up next, so weak spots get more practice.</p>
+    <div id="rows"></div>
+    <button id="draw" class="btn" type="button">Draw next question</button>
+    <span id="draw-out" role="status"></span>
+  </div>
+  <article class="project">
+    <div><h3>Adaptive Learning Quiz System</h3><div class="stack">Python: random, collections, json</div></div>
+    <div>
+      <p class="tagline">A practice quiz that notices what you get wrong and asks about it more often.</p>
+      <p class="why"><strong>Why:</strong> Reviewing weak spots helps more than repeating what you already know, so the program does the sorting.</p>
+      <ul>
+        <li>Generates randomized questions on topics the user picks, weighting selection toward subtopics with lower accuracy.</li>
+        <li>Tracks accuracy per subtopic with <code>defaultdict</code> and adjusts difficulty from rolling performance history.</li>
+        <li>Saves sessions and question banks in JSON so progress carries over between sessions.</li>
+        <li>Uses a modular design, so new question domains plug in without changing core logic.</li>
+      </ul>
+    </div>
+  </article>
+  <article class="project">
+    <div><h3>Workout &amp; Meal Tracker</h3><div class="stack">Python: pandas, matplotlib, datetime</div></div>
+    <div>
+      <p class="tagline">A personal log that turns daily entries into trends you can read at a glance.</p>
+      <p class="why"><strong>Why:</strong> A single day of data says little, but a rolling average shows whether a habit is holding.</p>
+      <ul>
+        <li>Stores workouts, calories, and macronutrients in pandas DataFrames for fast filtering and aggregation.</li>
+        <li>Charts weekly training volume and caloric surplus or deficit with matplotlib.</li>
+        <li>Computes rolling 7-day averages with <code>datetime</code> to show consistency over time.</li>
+        <li>Keeps all data local in CSV files, with no database required.</li>
+      </ul>
+    </div>
+  </article>
+  <article class="project">
+    <div><h3>Smart File Automation Tool</h3><div class="stack">Python: os, shutil, re, pathlib</div></div>
+    <div>
+      <p class="tagline">A command-line tool that sorts and renames messy folders by rules you write.</p>
+      <p class="why"><strong>Why:</strong> Moving files cannot be undone easily, so the tool shows its plan before it acts.</p>
+      <ul>
+        <li>Walks directory trees with <code>os</code> and <code>pathlib</code> and applies user-defined sorting and renaming rules.</li>
+        <li>Uses regular expressions to pull dates, prefixes, and extensions out of file names.</li>
+        <li>Includes a dry-run mode that previews every change before any file moves.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="job">
+    <h3>Intern, Milestone C</h3>
+    <p class="when">Shelton, CT, May to August 2022</p>
+    <p>I developed and taught technology curriculum for summer camps, built lesson plans and instructional videos, and researched emerging technologies and teaching methods to make the program more effective.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <ul class="skills">
+    <li>Python</li><li>Java</li><li>C#</li><li>C++</li><li>JavaScript</li><li>HTML &amp; CSS</li><li>SQL</li>
+    <li>Object-oriented programming</li><li>Algorithms &amp; data structures</li><li>Cybersecurity awareness</li>
+    <li>AI-assisted development (Claude)</li><li>Time management</li>
+  </ul>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>If my projects or teaching background sound like a fit for your team, I would love to hear from you. I'm glad to talk about internships, projects, or research, and email is the fastest way to reach me.</p>
+  <div class="links">
+    <a class="btn" href="mailto:Joshua.Joby@stonybrook.edu">Joshua.Joby@stonybrook.edu</a>
+    <button id="copy" class="btn alt" type="button">Copy email</button>
+    <a class="btn alt" href="https://www.linkedin.com/in/joshua-joby-0905b72a3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Joshua Joby, Stony Brook University, Information Systems Engineering, expected May 2027</div></footer>
+<script>
+(function(){
+var S=[{n:'Lists',r:0,t:0},{n:'Dictionaries',r:0,t:0},{n:'Recursion',r:0,t:0}];
+var rows=document.getElementById('rows'),out=document.getElementById('draw-out');
+var wt=function(s){return 1.1-(s.r+1)/(s.t+2)};
+S.forEach(function(s){var d=document.createElement('div');d.className='row';
+d.innerHTML='<span class="nm"></span><div class="bar"><i></i></div><span><button class="mini" type="button">Right</button><button class="mini" type="button">Wrong</button></span>';
+var b=d.querySelectorAll('button');b[0].onclick=function(){s.r++;s.t++;up()};b[1].onclick=function(){s.t++;up()};s.el=d;rows.appendChild(d)});
+function up(){var tot=S.reduce(function(a,s){return a+wt(s)},0);S.forEach(function(s){var p=Math.round(wt(s)/tot*100);s.el.querySelector('.nm').textContent=s.n+' '+p+'%';s.el.querySelector('i').style.width=p+'%'})}
+document.getElementById('draw').onclick=function(){var x=Math.random()*S.reduce(function(a,s){return a+wt(s)},0);for(var i=0;i<S.length;i++){x-=wt(S[i]);if(x<=0){out.textContent=' Next question: '+S[i].n;return}}out.textContent=' Next question: '+S[S.length-1].n};
+up();
+var r=document.documentElement;
+document.getElementById('theme').onclick=function(){var cur=r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');r.dataset.theme=cur==='dark'?'light':'dark'};
+var cb=document.getElementById('copy');
+cb.onclick=function(){try{navigator.clipboard.writeText('Joshua.Joby@stonybrook.edu').then(function(){cb.textContent='Email copied'},function(){cb.textContent='Use the email button'})}catch(e){cb.textContent='Use the email button'}};
+document.querySelectorAll('a[href^="#"]').forEach(function(a){var h=a.getAttribute('href');if(h==='#'){a.hidden=true;return}a.addEventListener('click',function(e){var t=document.getElementById(h.slice(1));if(t){e.preventDefault();t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});t.setAttribute('tabindex','-1');t.focus({preventScroll:true})}})});
+})();
+</script>
+</body>
+</html>
